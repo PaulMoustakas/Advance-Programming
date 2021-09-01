@@ -1,34 +1,24 @@
 package Section1;
 
 import java.util.Scanner;
-public class EcologicalPremium10300 {
+class EcologicalPremium10300 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int set = 1;
-        while (true) {
-            int n = input.nextInt(); // Stacks
-            if (n == 0) {
-                break;
+        int sqm, ani, envo;
+        int n = input.nextInt();
+        for (int i = 0; i < n; i++) {       //Testcases n
+            int f = input.nextInt();
+            double sum = 0;
+            for (int j = 0; j < f; j++) {   //Farmers
+                sqm      = input.nextInt();
+                ani      = input.nextInt();
+                envo     = input.nextInt();
+                double avgSqm   = (double)sqm / (double)ani;
+                double premium  = avgSqm * (double)envo;
+                double premiumTotal = premium * (double)ani;
+                sum += premiumTotal;
             }
-            int sum = 0;
-            int stacks[] = new int[n];
-            for (int i = 0; i < n; i++) {
-                int h = input.nextInt();
-                stacks[i] = h;
-                sum += h;
-            }
-            int height = sum / n;
-            int moves = 0;
-            for (int j = 0; j < n; j++) {
-                if (stacks[j] > height)
-                    moves += stacks[j] - height;
-            }
-            System.out.println("Set #" + set);
-            System.out.println("The minimum number of moves is " + moves + ".");
-            System.out.println("");
-            set++;
+            System.out.println((int)sum);
         }
-        System.exit(0);
     }
 }
-
