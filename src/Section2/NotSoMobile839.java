@@ -2,12 +2,12 @@ package Section2;
 
 import java.util.Scanner;
 
-class Main {
+class NotSoMobile839 {
     Scanner input = new Scanner(System.in);
     public boolean equilibrium;
 
     public static void main(String[] args) {
-        new Main().start();
+        new NotSoMobile839().start();
     }
 
     public void start () {
